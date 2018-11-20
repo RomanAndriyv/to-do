@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import TodoItems from "./containers/TodoItems";
-import "./TodoList.css";
+import TodoList from "./containers/todo-list";
+import "./todo.css";
 
 
-class TodoList extends Component {
+class Todo extends Component {
     constructor(props){
         super(props);
 
@@ -57,11 +57,11 @@ class TodoList extends Component {
                         <button type="submit">add</button>
                     </form>
                 </div>
-                <TodoItems entries={this.state.items}
+                <TodoList entries={this.state.items}
                             delete={this.deleteItem} />
             </div>
         );
     }
 }
 
-export default TodoList;
+export default Todo;

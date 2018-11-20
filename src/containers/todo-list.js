@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class TodoItems extends Component {
+class TodoList extends Component {
     constructor(props) {
         super(props);
 
@@ -31,4 +31,4 @@ class TodoItems extends Component {
     }
 }
 
-export default TodoItems;
+export default TodoList;
