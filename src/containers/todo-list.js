@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { selectTask } from "../actions/index";
 
 class TodoList extends Component {
     constructor(props) {
@@ -8,27 +11,35 @@ class TodoList extends Component {
     }
 
     createTasks(item) {
-        return <li onClick={() => this.delete(item.key)}
+        return <li onClick={() => this.props.selectTask(item)}
                     key={item.key}>{item.text}</li>
     }
 
     delete(key) {
         this.props.delete(key);
-        console.log(this);
-        console.log(this.props);
     }
 
     render() {
-        let todoEntries = this.props.entries;
-        let listItems;
-        if (todoEntries) listItems = todoEntries.map(this.createTasks);
+        if (!this.props.tasks) {
+            return <div>Trere are no tasks</div>;
+        }
 
         return (
             <ul className="theList">
-                {listItems}
+                {this.props.tasks.map(this.createTasks)}
             </ul>
         );
     }
 }
 
-export default TodoList;
+function mapStateToProps(state) {
+    return {
+        tasks: state.tasks
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ selectTask: selectTask }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
