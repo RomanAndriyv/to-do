@@ -39,8 +39,10 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ addTask }, dispatch);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addTask: (text) => dispatch(addTask(text))
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddTask);

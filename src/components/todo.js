@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import TodoList from "./containers/todo-list";
-import AddTask from "./containers/add-task";
-import "./app.css";
+import TodoList from "../containers/todo-list";
+import AddTask from "../containers/add-task";
+import "./todo.css";
 
 class Todo extends Component {
     constructor(props){

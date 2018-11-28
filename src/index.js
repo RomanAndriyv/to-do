@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import "./index.css";
-import Todo from "./todo";
-import rootReducer from './reducers';
+import Todo from "./components/todo";
+import store from "./store";
 
-const store = createStore(rootReducer);
 console.log(store.getState());
+
 
 const App = () => {
     return (

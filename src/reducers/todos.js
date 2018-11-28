@@ -3,14 +3,14 @@ import { ADD_TASK } from "../actions";
 const todos = (state = [], action) => {
     switch (action.type) {
         case ADD_TASK:
-            console.log(state);
-        return {
-            key: action.key,
-            text: action.text
-          }
+            console.log(action.text)
+            return state
+        case 'ADD_TASK_ERROR':
+            console.log('create task error: ', action.err);
+            return state
       default:
         return state
     }
-  };
+};
 
-export default todos;  
+export default todos;
