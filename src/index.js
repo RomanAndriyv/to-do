@@ -5,9 +5,6 @@ import "./index.css";
 import Todo from "./components/todo";
 import store from "./store";
 
-console.log(store.getState());
-
-
 const App = () => {
     return (
         <div>

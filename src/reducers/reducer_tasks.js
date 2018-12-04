@@ -1,5 +1,4 @@
 export default function() {
-    console.log('get all tasks');
     return JSON.parse(localStorage.getItem("tasks"));
     // return [
     //     { text: "1a", key: 154271566281 },

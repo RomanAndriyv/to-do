@@ -7,18 +7,18 @@ import { compose } from "redux";
 
 
 class TodoList extends Component {
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-        this.createTasks = this.createTasks.bind(this);
-    }
+    //     //this.createTasks = this.createTasks.bind(this);
+    // }
 
-    createTasks(item) {
+    createTasks = (item) => {
         return <li onClick={() => this.props.selectTask(item)}
                     key={item.id}>{item.text}</li>
     }
 
-    delete(key) {
+    delete = (key) => {
         this.props.delete(key);
     }
 
@@ -36,18 +36,17 @@ class TodoList extends Component {
 }
 
 function mapStateToProps(state) {
-    console.log(state);
     return {
         tasks: state.firestore.ordered.items
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ selectTask: selectTask }, dispatch);
-}
+// function mapDispatchToProps(dispatch) {
+//     return bindActionCreators({ selectTask: selectTask }, dispatch);
+// }
 
 export default compose(
-    connect(mapStateToProps, mapDispatchToProps),
+    connect(mapStateToProps, {selectTask}),
     firestoreConnect([
         { collection: 'items' }
     ])
