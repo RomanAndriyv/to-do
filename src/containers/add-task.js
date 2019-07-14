@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { addTask } from "../actions/";
+import { ADD_TASK } from "../actions";
 
 class AddTask extends Component {
     constructor(props){
@@ -41,7 +40,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTask: (text) => dispatch(addTask(text))
+        addTask: (text) => dispatch({type: ADD_TASK, text})
     }
 }
 

@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
-import { selectTask } from "../actions/index";
-import { firestoreConnect } from "react-redux-firebase";
-import { compose } from "redux";
 
 
 class TodoList extends Component {
@@ -37,17 +33,8 @@ class TodoList extends Component {
 
 function mapStateToProps(state) {
     return {
-        tasks: state.firestore.ordered.items
+        tasks: state.tasks
     }
 }
 
-// function mapDispatchToProps(dispatch) {
-//     return bindActionCreators({ selectTask: selectTask }, dispatch);
-// }
-
-export default compose(
-    connect(mapStateToProps, {selectTask}),
-    firestoreConnect([
-        { collection: 'items' }
-    ])
-)(TodoList);
+export default connect(mapStateToProps)(TodoList);
