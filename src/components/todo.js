@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TodoList from "../containers/todo-list";
+import TodoListConnnected from "../containers/todo-list";
 import AddTask from "../containers/add-task";
 import "./todo.css";
 
@@ -24,7 +24,7 @@ class Todo extends Component {
         return (
             <div className="todoListMain">
                 <AddTask />
-                <TodoList />
+                <TodoListConnnected />
             </div>
         );
     }

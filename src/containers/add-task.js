@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { ADD_TASK } from "../actions";
+import { addTask } from "../actions";
 
 class AddTask extends Component {
     constructor(props){
@@ -32,16 +32,10 @@ class AddTask extends Component {
     }
 }
 
-function mapStateToProps(state) {
-    return {
-        tasks: state.tasks
-    }
-}
-
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTask: (text) => dispatch({type: ADD_TASK, text})
+        addTask: (text) => dispatch(addTask(text))
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddTask);
+export default connect(undefined, mapDispatchToProps)(AddTask);

@@ -3,12 +3,6 @@ import { connect } from "react-redux";
 
 
 class TodoList extends Component {
-    // constructor(props) {
-    //     super(props);
-
-    //     //this.createTasks = this.createTasks.bind(this);
-    // }
-
     createTasks = (item) => {
         return <li onClick={() => this.props.selectTask(item)}
                     key={item.id}>{item.text}</li>
@@ -19,7 +13,7 @@ class TodoList extends Component {
     }
 
     render() {
-        if (!this.props.tasks) {
+        if (this.props.tasks.length === 0) {
             return <div>Trere are no tasks</div>;
         }
 
@@ -33,8 +27,9 @@ class TodoList extends Component {
 
 function mapStateToProps(state) {
     return {
-        tasks: state.tasks
+        tasks: state.todos.tasks,
     }
 }
 
-export default connect(mapStateToProps)(TodoList);
+const TodoListConnnected = connect(mapStateToProps)(TodoList);
+export default TodoListConnnected;

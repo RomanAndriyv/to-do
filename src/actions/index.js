@@ -9,19 +9,8 @@ export function selectTask(task) {
 }
 
 export const addTask = (text) => {
-    return (dispatch, getState, {getFirebase, getFirestore}) => {
-        const firestore = getFirestore();
-        firestore.collection('items').add({text}).then(() => {
-            // dispatch({
-            //     type: ADD_TASK,
-            //     key: Date.now(),
-            //     text
-            // })
-        }).catch((err) => {
-            dispatch({
-                type: 'ADD_TASK_ERROR',
-                err
-            })
-        });
+    return {
+        type: ADD_TASK,
+        text
     }
 }

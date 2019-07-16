@@ -4,8 +4,6 @@ import todos from './todos';
 import { firestoreReducer } from 'redux-firestore';
 
 const rootReducer = combineReducers({
-    tasks: TasksReducer,
-    firestore: firestoreReducer,
     todos
 });
 
