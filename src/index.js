@@ -5,14 +5,12 @@ import "./index.css";
 import Todo from "./components/todo";
 import store from "./store";
 
-const App = () => {
-    return (
-        <div>
-            <Provider store={store}>
-                <Todo />
-            </Provider>
-        </div>
-    );
-}
+const App = () => (
+    <div>
+        <Provider store={store}>
+            <Todo />
+        </Provider>
+    </div>
+);
 
 ReactDOM.render( <App />, document.querySelector("#container"));
