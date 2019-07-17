@@ -22,7 +22,7 @@ class TodoList extends Component {
     }
 }
 TodoList.propTypes = {
-    tasks: PropTypes.array,
+    tasks: PropTypes.array.isRequired,
 }
 
 function mapStateToProps(state) {
