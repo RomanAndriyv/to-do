@@ -14,9 +14,6 @@ const todos = (state = initialState, action) => {
                     text: action.text,
                 }),
             }
-        case 'ADD_TASK_ERROR':
-            console.log('create task error: ', action.err);
-            return state;
         default:
             return state;
     }
