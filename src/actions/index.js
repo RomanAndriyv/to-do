@@ -7,10 +7,11 @@ export function selectTask(task) {
         paylod: task
     }
 }
-
+let nextId = 0;
 export const addTask = (text) => {
     return {
-        type: ADD_TASK,
-        text
+        id: nextId++,
+        text,
+        type: ADD_TASK
     }
 }

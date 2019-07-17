@@ -9,10 +9,10 @@ const todos = (state = initialState, action) => {
         case ADD_TASK:
             return {
                 ...state,
-                tasks: state.tasks.concat({
-                    id: state.tasks.length,
+                tasks: [...state.tasks, {
+                    id: action.id,
                     text: action.text,
-                }),
+                }],
             }
         default:
             return state;

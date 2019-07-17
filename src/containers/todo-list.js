@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 
 
@@ -6,10 +7,6 @@ class TodoList extends Component {
     createTasks = (item) => {
         return <li onClick={() => this.props.selectTask(item)}
                     key={item.id}>{item.text}</li>
-    }
-
-    delete = (key) => {
-        this.props.delete(key);
     }
 
     render() {
@@ -23,6 +20,9 @@ class TodoList extends Component {
             </ul>
         );
     }
+}
+TodoList.propTypes = {
+    tasks: PropTypes.array,
 }
 
 function mapStateToProps(state) {
