@@ -1,10 +1,10 @@
 export const ADD_TASK = 'ADD_TASK';
-export const SELECT_TASK = 'SELECT_TASK';
+export const DELETE_TASK = 'DELETE_TASK';
 
-export function selectTask(task) {
+export function deleteTask(id) {
     return {
-        type: SELECT_TASK,
-        paylod: task
+        id,
+        type: DELETE_TASK,
     }
 }
 let nextId = 0;
