@@ -20,7 +20,8 @@
     background-color: #003399;
 }
 
-.todoListMain .theList li {
+.todoListMain .theList li,
+.todoListMain .clear {
     color: #333333;
     background-color: rgba(255, 255, 255, .5);
     padding: 15px;
@@ -29,6 +30,11 @@
     list-style: none;
 
     transition: background-color .2s ease-out;
+}
+
+.todoListMain .clear {
+    background-color: rgba(255, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 .todoListMain .theList li:hover {

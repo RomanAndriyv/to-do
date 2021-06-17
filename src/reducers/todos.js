@@ -1,5 +1,5 @@
 import { ADD_TASK_ASYNC } from "../actions";
-import { DELETE_TASK } from "../actions";
+import { DELETE_ALL, DELETE_TASK } from "../actions";
 
 const initialState = {
     tasks: [],
@@ -19,6 +19,11 @@ const todos = (state = initialState, action) => {
             return {
                 ...state,
                 tasks: state.tasks.filter(t => t.id !== action.id),
+            }
+        case DELETE_ALL:
+            return {
+                ...state,
+                tasks: [],
             }
         default:
             return state;
